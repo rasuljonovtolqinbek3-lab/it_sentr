@@ -255,6 +255,13 @@ export default function PuzzleGame() {
     }
   }, []);
 
+  useEffect(() => {
+    if (gameState === "camera" && videoRef.current && stream) {
+      videoRef.current.srcObject = stream;
+      videoRef.current.play().catch(e => console.error("Video play error:", e));
+    }
+  }, [gameState, stream]);
+
   const openGame = () => {
     setModalOpen(true);
     setGameState("idle");
