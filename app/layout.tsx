@@ -19,10 +19,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "IT CENTER TO'RTO'L - Zamonaviy IT va kasb-hunar ta'lim markazi",
-  description: "IT CENTER TO'RTO'L: Zamonaviy kasblarni o'rganing. Python, C++, web dasturlash, mobil dasturlash, kiberxavfsizlik, robototexnika, ingliz tili, buxgalteriya.",
+  title: "IT CENTER TO'RTKO'L - Zamonaviy IT va kasb-hunar ta'lim markazi",
+  description: "IT CENTER TO'RTKO'L: Zamonaviy kasblarni o'rganing. Python, C++, web dasturlash, mobil dasturlash, kiberxavfsizlik, robototexnika, ingliz tili, buxgalteriya.",
   openGraph: {
-    title: "IT CENTER TO'RTO'L - Zamonaviy IT va kasb-hunar ta'lim markazi",
+    title: "IT CENTER TO'RTKO'L - Zamonaviy IT va kasb-hunar ta'lim markazi",
     description: "To'rtko'ldagi yetakchi IT o'quv markazi. Kelajak kasblarini bugundan o'rganing.",
     type: "website",
     locale: "uz_UZ",

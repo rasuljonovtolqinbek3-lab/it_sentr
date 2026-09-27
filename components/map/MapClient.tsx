@@ -50,7 +50,7 @@ export default function MapClient({ onRouteCalculated, onError }: MapClientProps
 
       L.marker(IT_CENTER_COORDS, { icon: customIcon })
         .addTo(map)
-        .bindPopup("<div class='font-bold text-black'>IT CENTER TO'RTO'L</div>", {
+        .bindPopup("<div class='font-bold text-black'>IT CENTER TO'RTKO'L</div>", {
           closeButton: false,
         })
         .openPopup();

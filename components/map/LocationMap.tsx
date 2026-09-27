@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
@@ -42,7 +42,7 @@ export default function LocationMap() {
           <div className="lg:col-span-1 flex flex-col gap-6">
             <div className="glass-card p-6 flex flex-col gap-6 h-full">
               <div>
-                <h3 className="text-xl font-bold text-white mb-2">IT CENTER TO'RTO'L</h3>
+                <h3 className="text-xl font-bold text-white mb-2">IT CENTER TO'RTKO'L</h3>
                 <p className="text-gray-400 text-sm">
                   {IT_CENTER_ADDRESS}
                 </p>
@@ -87,7 +87,7 @@ export default function LocationMap() {
 
           {/* Map Container */}
           <div className="lg:col-span-2 h-[400px] lg:h-[600px] rounded-2xl overflow-hidden relative border border-white/10 shadow-[0_0_30px_rgba(0,0,0,0.5)]">
-            <MapComponent onRouteCalculated={(dist, time) => setRouteData({ distance: dist, time: time })} onError={(err) => setRouteData({ error: err, distance: "", time: "" })} />
+            <MapComponent onRouteCalculated={(dist: string, time: string) => setRouteData({ distance: dist, time: time })} onError={(err: string) => setRouteData({ error: err, distance: "", time: "" })} />
           </div>
         </div>
       </div>

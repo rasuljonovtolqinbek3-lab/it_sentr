@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { motion } from "framer-motion";
 import { Laptop, Briefcase, Zap, Compass, Users, TrendingUp, Award, ShieldCheck } from "lucide-react";
@@ -25,7 +25,7 @@ export default function WhyUs() {
             viewport={{ once: true }}
             className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-white"
           >
-            Nega aynan <span className="text-primary">IT CENTER TO'RTO'L?</span>
+            Nega aynan <span className="text-primary">IT CENTER TO'RTKO'L?</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}

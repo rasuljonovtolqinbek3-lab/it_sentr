@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { motion } from "framer-motion";
 import { ArrowRight, Send } from "lucide-react";
@@ -18,7 +18,7 @@ export default function MainCTA() {
             Kelajagingizni <span className="text-primary">bugundan boshlang.</span>
           </h2>
           <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
-            O'zingizga mos yo'nalishni tanlang va IT CENTER TO'RTO'L bilan yangi bilimlar sari qadam qo'ying.
+            O'zingizga mos yo'nalishni tanlang va IT CENTER TO'RTKO'L bilan yangi bilimlar sari qadam qo'ying.
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

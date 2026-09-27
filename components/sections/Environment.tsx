@@ -48,7 +48,7 @@ export default function Environment() {
             viewport={{ once: true }}
             className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-white"
           >
-            IT CENTER TO'RTO'L <span className="text-primary">muhiti</span>
+            IT CENTER TO'RTKO'L <span className="text-primary">muhiti</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}

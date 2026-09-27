@@ -2,10 +2,12 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X, Globe } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export default function Header() {
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -17,13 +19,16 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  if (pathname.startsWith("/admin")) return null;
+
   const navLinks = [
     { name: "Bosh sahifa", href: "/" },
-    { name: "Kurslar", href: "#courses" },
-    { name: "Nega biz?", href: "#why-us" },
-    { name: "Natijalar", href: "#achievements" },
-    { name: "Muhitimiz", href: "#environment" },
-    { name: "Aloqa", href: "#contact" },
+    { name: "Sertifikat", href: "/verify" },
+    { name: "Kurslar", href: "/#courses" },
+    { name: "Nega biz?", href: "/#why-us" },
+    { name: "Natijalar", href: "/#achievements" },
+    { name: "Muhitimiz", href: "/#environment" },
+    { name: "Aloqa", href: "/#contact" },
   ];
 
   return (
@@ -39,7 +44,7 @@ export default function Header() {
           <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center font-bold text-black text-xl shadow-[0_0_15px_rgba(0,214,84,0.5)] group-hover:scale-105 transition-transform">
             IT
           </div>
-          <span className="font-bold text-lg hidden sm:block tracking-tight">CENTER TO'RTO'L</span>
+          <span className="font-bold text-lg hidden sm:block tracking-tight">CENTER TO'RTKO'L</span>
         </Link>
 
         {/* Desktop Navigation */}
