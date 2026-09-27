@@ -1,29 +1,23 @@
-import { drizzle } from 'drizzle-orm/mysql2';
-import mysql from 'mysql2/promise';
+import { drizzle } from 'drizzle-orm/postgres-js';
+import postgres from 'postgres';
 import * as schema from './schema';
 
-// Prevent hot reload from creating multiple connections
 declare global {
-  var mysqlConnection: mysql.Connection | undefined;
+  var pgClient: postgres.Sql | undefined;
 }
 
-let connection: mysql.Connection;
+const connectionString = process.env.DATABASE_URL || 'postgresql://postgres:postgres@localhost:5432/postgres';
 
-async function getConnection() {
-  if (global.mysqlConnection) {
-    return global.mysqlConnection;
+// Use connection pooling, but handle hot reloads in Next.js development
+let client: postgres.Sql;
+
+if (process.env.NODE_ENV === 'production') {
+  client = postgres(connectionString, { prepare: false });
+} else {
+  if (!global.pgClient) {
+    global.pgClient = postgres(connectionString, { prepare: false });
   }
-  
-  const conn = await mysql.createConnection(process.env.DATABASE_URL || 'mysql://user:pass@localhost:3306/dbname');
-  
-  if (process.env.NODE_ENV !== 'production') {
-    global.mysqlConnection = conn;
-  }
-  return conn;
+  client = global.pgClient;
 }
 
-// In Next.js App Router, some route handlers use the db object directly without waiting for a promise.
-// Drizzle supports a connection pool.
-const pool = mysql.createPool(process.env.DATABASE_URL || 'mysql://user:pass@localhost:3306/dbname');
-
-export const db = drizzle(pool, { schema, mode: 'default' });
+export const db = drizzle(client, { schema });

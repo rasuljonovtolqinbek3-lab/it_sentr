@@ -40,9 +40,9 @@ console.log('2. public papkasi ko\'chirilmoqda...');
 copyFolderSync(path.join(__dirname, '../public'), publicDir);
 
 // Copy database migrations
-console.log('3. migrate.js va drizzle_migrations ko\'chirilmoqda...');
+console.log('3. migrate.js va lib/db/migrations ko\'chirilmoqda...');
 copyFileSync(path.join(__dirname, '../migrate.js'), path.join(standaloneDir, 'migrate.js'));
-copyFolderSync(path.join(__dirname, '../drizzle_migrations'), path.join(standaloneDir, 'drizzle_migrations'));
+copyFolderSync(path.join(__dirname, '../lib/db/migrations'), path.join(standaloneDir, 'lib/db/migrations'));
 
 // Create empty pdfs folder to prevent crashes
 const pdfDir = path.join(standaloneDir, 'data/certificates/pdfs');

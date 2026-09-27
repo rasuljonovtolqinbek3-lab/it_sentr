@@ -6,8 +6,8 @@ dotenv.config({ path: '.env.local' });
 export default defineConfig({
   schema: './lib/db/schema.ts',
   out: './lib/db/migrations',
-  dialect: 'mysql',
+  dialect: 'postgresql',
   dbCredentials: {
-    url: process.env.DATABASE_URL || 'mysql://user:pass@localhost:3306/dbname',
+    url: process.env.DATABASE_URL || 'postgresql://postgres:postgres@localhost:5432/postgres',
   },
 });

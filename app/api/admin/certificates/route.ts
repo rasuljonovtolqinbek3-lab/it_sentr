@@ -96,7 +96,7 @@ export async function POST(request: NextRequest) {
         });
         inserted = true;
       } catch (err: any) {
-        if (err.code === 'ER_DUP_ENTRY' || err.code === 'SQLITE_CONSTRAINT_UNIQUE') {
+        if (err.code === '23505' || err.code === 'ER_DUP_ENTRY' || err.code === 'SQLITE_CONSTRAINT_UNIQUE') {
           return NextResponse.json({ success: false, error: 'Bu ID dagi sertifikat allaqachon mavjud' }, { status: 400 });
         }
         throw err;
@@ -119,7 +119,7 @@ export async function POST(request: NextRequest) {
           inserted = true;
           break;
         } catch (err: any) {
-          if (err.code !== 'ER_DUP_ENTRY' && err.code !== 'SQLITE_CONSTRAINT_UNIQUE') {
+          if (err.code !== '23505' && err.code !== 'ER_DUP_ENTRY' && err.code !== 'SQLITE_CONSTRAINT_UNIQUE') {
             throw err;
           }
         }
